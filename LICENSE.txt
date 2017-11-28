@@ -1,0 +1,1 @@
+I tried to figure out how the working diretory, repository, stage, master and HEAD work.

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+"""This is a python string test demo."""
 S1 = 72
 S2 = 85
 IMPROVEMENT = 100.0 * (S2-S1)/S1

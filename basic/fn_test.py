@@ -5,7 +5,7 @@ import math
 def quadratic(a, b, c):   
     """this is a fn for cal the roots of ax^2 + bx + c = 0"""
     if a == 0:
-        raise ('The input should be int or float')
+        print('a can not be 0!')
     if not isinstance(a, (int, float)):
         raise TypeError('The input should be int or float')
     if not isinstance(b, (int, float)):

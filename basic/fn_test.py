@@ -63,9 +63,9 @@ def move(n, a, b, c):
     if n == 1:
         print('move', a, '-->', c)
     else:
-        move(n - 1, a, c, b)
-        move(1, a, b, c)
-        move(n - 1, b, a, c)
+        move(n - 1, a, c, b)#本次成功的倒数第三步必定是把 a上（n-1）个盘子通过c移动到b
+        move(1, a, b, c)   # 本次成功的倒数第二步必定是把 1个盘子由a移动到c
+        move(n - 1, b, a, c)  # 本次成功的倒数第一步必定是把b上 （n-1）个盘子通过a移动到c
 
 
 move(4, 'A', 'B', 'C')

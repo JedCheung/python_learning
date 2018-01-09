@@ -17,6 +17,15 @@ def quadratic(a, b, c):
     return r1, r2
 
 
+def product(*numbers):
+    if numbers is ():
+        raise TypeError('Please input int or float!')
+    mul = 1
+    for n in numbers:
+        mul = mul * n
+    return mul
+
+
 print('quadratic(2, 3, 1) =', quadratic(2, 3, 1))
 print('quadratic(1, 3, -4) =', quadratic(1, 3, -4))
 
@@ -26,3 +35,37 @@ elif quadratic(1, 3, -4) != (1.0, -4.0):
     print('测试失败')
 else:
     print('测试成功')
+
+# 测试
+print('product(5) =', product(5))
+print('product(5, 6) =', product(5, 6))
+print('product(5, 6, 7) =', product(5, 6, 7))
+print('product(5, 6, 7, 9) =', product(5, 6, 7, 9))
+
+if product(5) != 5:
+    print('测试失败!')
+elif product(5, 6) != 30:
+    print('测试失败!')
+elif product(5, 6, 7) != 210:
+    print('测试失败!')
+elif product(5, 6, 7, 9) != 1890:
+    print('测试失败!')
+else:
+    try:
+        product()
+        print('测试失败!')
+    except TypeError:
+        print('测试成功!')
+
+# 利用递归函数移动汉诺塔:
+
+def move(n, a, b, c):
+    if n == 1:
+        print('move', a, '-->', c)
+    else:
+        move(n - 1, a, c, b)
+        move(1, a, b, c)
+        move(n - 1, b, a, c)
+
+
+move(4, 'A', 'B', 'C')
